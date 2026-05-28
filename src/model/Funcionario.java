@@ -1,7 +1,9 @@
 package model;
 
-public class Funcionario {
+import java.util.List;
 
+public class Funcionario {
+    List<Funcionario> funcionarios;
     private int id;
     private String nome;
     private String cpf;
@@ -9,6 +11,8 @@ public class Funcionario {
     private double salarioBase;
     private int faltas;
     private double horasExtrasTotais;
+
+    public Funcionario() {}
 
     public Funcionario(int id, String nome, String cpf, Cargo cargo, double salarioBase, int faltas, double horasExtrasTotais) {
         this.id = id;
@@ -74,5 +78,9 @@ public class Funcionario {
 
     public void setHorasExtrasTotais(double horasExtrasTotais) {
         this.horasExtrasTotais = horasExtrasTotais;
+    }
+
+    public void cadastrarFuncionario(Funcionario f) {
+        funcionarios.add(f);
     }
 }
